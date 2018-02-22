@@ -11,7 +11,7 @@ install:
   - mono .nuget/nuget.exe install NUnit.Runners -Version 3.2.1 -OutputDirectory ./src/packages
 addons:
   sonarcloud:
-    organization: "leandowich-github" # the key of the org you chose at step #3
+    organization: leandowich-github # the key of the org you chose at step #3
     token: SONAR_TOKEN
 jdk:
   - oraclejdk8
