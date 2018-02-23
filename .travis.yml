@@ -11,5 +11,5 @@ addons:
 
 script:
   - dotnet restore
-  - npm install
+  - cd sonarcloudtest && npm install
   - sonar-scanner
