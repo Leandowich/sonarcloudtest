@@ -12,7 +12,7 @@ install:
 addons:
   sonarcloud:
     organization: leandowich-github # the key of the org you chose at step #3
-    token: SONAR_TOKEN
+    token: $SONAR_TOKEN
 
 script:
   # other script steps might be done before running the actual analysis
