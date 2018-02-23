@@ -9,7 +9,6 @@ before_install:
 install:
   - mono .nuget/nuget.exe restore <sonarcloudtest.sln> -Verbosity
   - mono .nuget/nuget.exe install NUnit.Runners -Version 3.2.1 -OutputDirectory ./src/packages
-  - npm install
 addons:
   sonarcloud:
     organization: leandowich-github # the key of the org you chose at step #3
