@@ -3,13 +3,12 @@ solution: sonarcloudtest.sln
 mono: none
 dotnet: 2.1.4
 install:
-  - npm install -g typescript
+  - dotnet restore
 addons:
   sonarcloud:
     organization: leandowich-github # the key of the org you chose at step #3
     token: $SONAR_TOKEN
 
 script:
-  - dotnet restore
-  - dotnet rebuild
+  - dotnet build
   - sonar-scanner
