@@ -6,7 +6,7 @@ before_install:
   - npm install -g npm
 install:
   - dotnet restore
-  - cd sonarcloudtest && npm install
+  - cd sonarcloudtest && npm install && cd ..
 addons:
   sonarcloud:
     organization: leandowich-github # the key of the org you chose at step #3
