@@ -1,20 +1,22 @@
 language: csharp
 solution: sonarcloudtest.sln
-sudo: required
+mono: none
+dotnet: 2.1.4
 # https://github.com/travis-ci/travis-ci/issues/5932
-before_install:
-  - mkdir -p .nuget
-  - wget -O .nuget/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-  - mono .nuget/nuget.exe # Output NuGet's version number
-install:
-  - mono .nuget/nuget.exe restore <sonarcloudtest.sln> -Verbosity
-  - mono .nuget/nuget.exe install NUnit.Runners -Version 3.2.1 -OutputDirectory ./src/packages
-  - npm install -g typescript
+#before_install:
+#  - mkdir -p .nuget
+#  - wget -O .nuget/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+#  - mono .nuget/nuget.exe # Output NuGet's version number
+#install:
+#  - mono .nuget/nuget.exe restore <sonarcloudtest.sln> -Verbosity
+#  - mono .nuget/nuget.exe install NUnit.Runners -Version 3.2.1 -OutputDirectory ./src/packages
+#  - npm install -g typescript
 addons:
   sonarcloud:
     organization: leandowich-github # the key of the org you chose at step #3
     token: $SONAR_TOKEN
 
 script:
+  - dotnet restore
   # other script steps might be done before running the actual analysis
-  - sonar-scanner -X
+  - sonar-scanner
