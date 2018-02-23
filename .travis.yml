@@ -2,8 +2,11 @@ language: csharp
 solution: sonarcloudtest.sln
 mono: none
 dotnet: 2.1.4
+before_install:
+  - npm install -g npm
 install:
   - dotnet restore
+  - cd sonarcloudtest && npm install
 addons:
   sonarcloud:
     organization: leandowich-github # the key of the org you chose at step #3
