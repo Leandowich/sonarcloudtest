@@ -11,4 +11,5 @@ addons:
 
 script:
   - dotnet restore
+  - dotnet rebuild
   - sonar-scanner
