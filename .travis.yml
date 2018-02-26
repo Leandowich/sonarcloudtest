@@ -1,7 +1,7 @@
 language: csharp
 solution: sonarcloudtest.sln
 mono: none
-dotnet: 2.0.5
+dotnet: 2.1.4
 addons:
   sonarcloud:
     organization: leandowich-github # the key of the org you chose at step #3
