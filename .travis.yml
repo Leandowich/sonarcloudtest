@@ -1,12 +1,7 @@
 language: csharp
 solution: sonarcloudtest.sln
-# mono: none
-dotnet: 2.1.4
-before_install:
-  - npm install -g npm
-install:
-  - dotnet restore
-  - cd sonarcloudtest && npm install && cd ..
+mono: none
+dotnet: 2.0.5
 addons:
   sonarcloud:
     organization: leandowich-github # the key of the org you chose at step #3
@@ -14,8 +9,13 @@ addons:
     github_token: $GITHUB_TOKEN
     branches:
       - .*
+
+before_install:
+  - npm install -g npm
+  - bash ./tools/travis-install-dependencies.sh
+install:
+  - cd sonarcloudtest && npm install && cd ..
+
 script:
-  - mono ../tools/sonar/SonarQube.Scanner.MSBuild.exe begin /n:NGenerics /k:leandowich-github /d:sonar.login=${SONAR_TOKEN} /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vstest.reportsPaths="*/TestResults/.trx" /v:"2.0"
-  - dotnet build
-  - mono ../tools/sonar/SonarQube.Scanner.MSBuild.exe end /d:sonar.login=${SONAR_TOKEN}
-#  - sonar-scanner
+  - git fetch --unshallow || true
+  - bash ./tools/travis-build.sh
