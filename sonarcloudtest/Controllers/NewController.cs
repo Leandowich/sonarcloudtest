@@ -11,17 +11,18 @@ namespace sonarcloudtest.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Ietm> Things()
         {
-            var abe = 2;
-            if (abe == 2)
-            {
-
-            }
-
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new Ietm
+            var name = "John";
+            if ("".Equals(name))
             {
-                name = "John" + rng.Next()
-            });
+
+            } else
+            {
+                return Enumerable.Range(1, 5).Select(index => new Ietm
+                {
+                    name = name + rng.Next()
+                });
+            }
         }
 
         public class Ietm
