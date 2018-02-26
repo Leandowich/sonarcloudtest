@@ -15,7 +15,7 @@ namespace sonarcloudtest.Controllers
             var name = "John";
             if ("".Equals(name))
             {
-
+                var wat = "How is this okay?";
             } else
             {
                 
