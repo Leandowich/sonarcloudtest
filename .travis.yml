@@ -1,6 +1,7 @@
 language: csharp
 solution: sonarcloudtest.sln
-mono: none
+# mono: none
+# sudo: required
 dotnet: 2.1.4
 addons:
   sonarcloud:
