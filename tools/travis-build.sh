@@ -6,7 +6,8 @@ fi
 
 dotnet restore
 dotnet build
-dotnet test
+#dotnet test
+
 # dotnet test NGenerics.Tests --logger:trx
 # dotnet test NGenerics.Examples --logger:trx
 
