@@ -12,6 +12,8 @@ addons:
     organization: leandowich-github # the key of the org you chose at step #3
     token: $SONAR_TOKEN
     github_token: $GITHUB_TOKEN
+    branches:
+      - .*
 script:
   - dotnet build
   - sonar-scanner
