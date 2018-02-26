@@ -18,11 +18,12 @@ namespace sonarcloudtest.Controllers
 
             } else
             {
-                return Enumerable.Range(1, 5).Select(index => new Ietm
-                {
-                    name = name + rng.Next()
-                });
+                
             }
+            return Enumerable.Range(1, 5).Select(index => new Ietm
+            {
+                name = name + rng.Next()
+            });
         }
 
         public class Ietm
