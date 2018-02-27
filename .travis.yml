@@ -13,10 +13,10 @@ addons:
 
 before_install:
   - npm install -g npm
-  - bash ./tools/travis-install-dependencies.sh
+
 install:
   - cd sonarcloudtest && npm install && cd ..
 
 script:
-  - git fetch --unshallow || true
+  - bash ./tools/travis-install-dependencies.sh
   - bash ./tools/travis-build.sh
