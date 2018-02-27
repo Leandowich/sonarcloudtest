@@ -49,14 +49,4 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
-
-  <ItemGroup>
-    <SonarQubeSetting Include="sonar.ts.tslintconfigpath">
-      <Value>tslint.json</Value>
-    </SonarQubeSetting>
-    <SonarQubeSetting Include="sonar.ts.lcov.reportpath">
-      <Value>test-results/coverage/coverage.lcov</Value>
-    </SonarQubeSetting>
-  </ItemGroup>
-
 </Project>
