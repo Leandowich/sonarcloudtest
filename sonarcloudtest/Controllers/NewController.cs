@@ -18,7 +18,7 @@ namespace sonarcloudtest.Controllers
                 var wat = "How is this okay?";
             } else
             {
-                var failure = "Please comment on this failure";
+                 var failure = "Please comment on this failure";
             }
             return Enumerable.Range(1, 5).Select(index => new Ietm
             {
