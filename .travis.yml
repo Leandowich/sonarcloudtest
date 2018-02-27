@@ -16,7 +16,7 @@ before_install:
 
 install:
   - cd sonarcloudtest && npm install && cd ..
+  - bash ./tools/travis-install-dependencies.sh
 
 script:
-  - bash ./tools/travis-install-dependencies.sh
   - bash ./tools/travis-build.sh
