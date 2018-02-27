@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Only need Mono and Sonar for non-pull request builds
-if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+if [ "$TRAVIS_PULL_REQUEST" = "false" ] || [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN:-}" ]; then
 	# Install a more recent version of Mono
 #	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 #	echo "deb http://download.mono-project.com/repo/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/mono-official.list
