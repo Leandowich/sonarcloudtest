@@ -24,8 +24,7 @@ elif [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN:-}" ]; then
 		/d:sonar.analysis.mode=preview \
 		/d:sonar.github.pullRequest=$TRAVIS_PULL_REQUEST \
 		/d:sonar.github.repository=$TRAVIS_REPO_SLUG \
-		/d:sonar.github.oauth=$GITHUB_TOKEN \
-		/d:/v:"2.0"
+		/d:sonar.github.oauth=$GITHUB_TOKEN
 else
 	echo 'Build feature branch or external pull request'
 fi
