@@ -13,14 +13,14 @@ git fetch --unshallow || true
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 	echo 'Build and analyze release branch'
 	mono ./tools/sonar/SonarQube.Scanner.MSBuild.exe begin /n:sonarcloudtest /k:leandowich-github /d:sonar.login=${SONAR_TOKEN} \
-		/d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx" \ # .NET Core test coverage
-		/d:sonar.ts.tslintconfigpath="**/tslint.json" /d:sonar.ts.lcov.reportpath="test-results/coverage/coverage.lcov" \ # Typescript test coverage
+		/d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx" \
+		/d:sonar.ts.tslintconfigpath="**/tslint.json" /d:sonar.ts.lcov.reportpath="test-results/coverage/coverage.lcov" \
 		/v:"2.0" 
 elif [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN:-}" ]; then
 	echo 'Build and analyze internal pull request'
 	mono ./tools/sonar/SonarQube.Scanner.MSBuild.exe begin /n:sonarcloudtest /k:leandowich-github /d:sonar.login=${SONAR_TOKEN} \
-		/d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx" \ # .NET Core test coverage
-		/d:sonar.ts.tslintconfigpath="**/tslint.json" /d:sonar.ts.lcov.reportpath="test-results/coverage/coverage.lcov" \ # Typescript test coverage
+		/d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx" \
+		/d:sonar.ts.tslintconfigpath="**/tslint.json" /d:sonar.ts.lcov.reportpath="test-results/coverage/coverage.lcov" \
 		/d:sonar.analysis.mode=preview \
 		/d:sonar.github.pullRequest=$TRAVIS_PULL_REQUEST \
 		/d:sonar.github.repository=$TRAVIS_REPO_SLUG \
