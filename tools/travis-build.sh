@@ -37,6 +37,6 @@ dotnet build
 # dotnet test NGenerics.Tests --logger:trx
 # dotnet test NGenerics.Examples --logger:trx
 
-if [ "$TRAVIS_PULL_REQUEST" = "false" ] || {[ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN:-}" ]}; then
+if [ "$TRAVIS_PULL_REQUEST" = "false" ] || { [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN:-}" ] }; then
 	mono ./tools/sonar/SonarQube.Scanner.MSBuild.exe end /d:sonar.login=${SONAR_TOKEN}
 fi
