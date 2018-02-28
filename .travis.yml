@@ -5,7 +5,7 @@ solution: sonarcloudtest.sln
 dotnet: 2.1.4
 addons:
   sonarcloud:
-    organization: leandowich-github # the key of the org you chose at step #3
+    organization: itminds # the key of the org you chose at step #3
     token: $SONAR_TOKEN
     github_token: $GITHUB_TOKEN
     branches:
