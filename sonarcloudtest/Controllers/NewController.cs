@@ -19,6 +19,7 @@ namespace sonarcloudtest.Controllers
             } else
             {
                 var error = "FAIL!";
+                var ehh = "ABE!!!";
             }
             return Enumerable.Range(1, 5).Select(index => new Ietm
             {
